@@ -1,21 +1,19 @@
 import React, { useState } from "react";
 import { Box, Grid, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { styled } from "@mui/system";
 import PropertyCard from "./PropertyCard";
 import Filters from "./Filters";
 import { properties } from "../data/properties";
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    padding: theme.spacing(4),
-  },
-  filtersContainer: {
-    marginBottom: theme.spacing(4),
-  },
+const Container = styled(Box)(({ theme }) => ({
+  padding: theme.spacing(4),
+}));
+
+const FiltersContainer = styled(Box)(({ theme }) => ({
+  marginBottom: theme.spacing(4),
 }));
 
 const PropertyList = () => {
-  const classes = useStyles();
   const [filteredProperties, setFilteredProperties] = useState(properties);
 
   const handleFilterChange = (filters) => {
@@ -47,10 +45,10 @@ const PropertyList = () => {
   };
 
   return (
-    <Box className={classes.container}>
-      <Box className={classes.filtersContainer}>
+    <Container>
+      <FiltersContainer>
         <Filters onFilterChange={handleFilterChange} />
-      </Box>
+      </FiltersContainer>
       <Grid container spacing={3}>
         {filteredProperties.length > 0 ? (
           filteredProperties.map((property) => (
@@ -62,7 +60,7 @@ const PropertyList = () => {
           <Typography variant="h6">No properties found.</Typography>
         )}
       </Grid>
-    </Box>
+    </Container>
   );
 };
 
