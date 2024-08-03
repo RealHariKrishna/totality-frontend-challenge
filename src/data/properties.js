@@ -15,7 +15,7 @@ export const properties = [
     title: "Luxury Villa",
     description: "A luxurious villa with modern amenities.",
     price: 2500,
-    location: "log-angeles",
+    location: "los-angeles",
     bedrooms: 4,
     amenities: ["pool", "parking"],
     image:
