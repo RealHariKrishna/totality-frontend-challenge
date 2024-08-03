@@ -25,7 +25,7 @@ const PropertyCard = ({ property }) => {
           {property.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {property.description}
+          {property.description} with {property.bedrooms} bedrooms
         </Typography>
         <Typography variant="h6">${property.price} / night</Typography>
       </CardContent>
